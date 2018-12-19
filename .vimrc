@@ -27,8 +27,6 @@ Plugin 'kana/vim-textobj-line'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'valloric/youcompleteme'
-" Plugin 'ShowMarks'
-" Plugin 'xolox/vim-notes'
 "Colortheme plugins
 Plugin 'xolox/vim-misc'
 Plugin 'junegunn/seoul256.vim'
@@ -38,6 +36,7 @@ Plugin 'lokaltog/vim-distinguished'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'machakann/vim-swap'
+Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -55,7 +54,7 @@ inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-h> <Left>
 inoremap jj <Esc>
-inoremap øø <Esc>
+" inoremap øø <Esc>
 inoremap <C-f> <C-r>"
 
 inoremap ´ `
@@ -69,7 +68,7 @@ nnoremap <C-l> <C-W>l
 nnoremap ø ;
 nnoremap Ø ,
 nnoremap Y y$
-nnoremap <space> /
+nnoremap <space> :
 
 "Leader mappings
 nnoremap <leader>gc :Gcommit %<CR>
@@ -85,7 +84,7 @@ nnoremap <leader>pdf :!open '%:r'.pdf<cr>
 nnoremap <leader>doc :call Pydoc()<cr>
 nnoremap <leader>p :Shell pydoc 
 nnoremap <leader>e oexit()<esc>
-
+" nnoremap <leader>xxx :! 
 "User Commands
 " command! Mnote vsplit | Note masternote
 
@@ -94,21 +93,20 @@ colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_imporoved_strings = 1
 let g:python_highlight_space_errors = 0
-" let g:pymode_doc = 1
-" let g:pymode_doc_bind = 'K'
-
 let g:python_highlight_builtin_objs = 0
 let g:python_highlight_all = 1
 syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " sets
 set background=dark 
+set t_Co=256
 set autoindent
 set tabstop=4
 set number
 set shiftwidth=4
 set expandtab
 set wildmode=longest,list,full
+set path+=**
 set wildmenu
 set laststatus=2
 set noshowmode

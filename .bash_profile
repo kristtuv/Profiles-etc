@@ -7,26 +7,27 @@
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 alias googledrive='cd ~/Google\ Drive\ \(kristiantuv\@gmail.com\)/'
 alias books='cd ~/Google\ Drive\ \(kristiantuv\@gmail.com\)/Books'
-alias note='mvim /Users/Tuv/.vim/bundle/vim-notes/misc/notes/user/masternote'
+alias note='vim /Users/Tuv/.vim/bundle/vim-notes/misc/notes/user/masternote'
 alias notes='cd /Users/Tuv/.vim/bundle/vim-notes/misc/notes/user'
 alias d='date'
+alias full="printf '\e[9;1t'"
 alias cpua="ps -A -o %cpu ";
 alias NASA='telnet horizons.jpl.nasa.gov 6775';
 alias fys4460="cd ~/Documents/UiO/V18/FYS4460";
 alias inf5860="cd ~/Documents/UiO/V18/INF5860";
 alias fys4130="cd ~/Documents/UiO/V18/FYS4130";
 alias v18="cd ~/Documents/UiO/V18/";
-alias bp="mvim ~/.bash_profile";
-alias vrc="mvim ~/.vimrc";
-alias sbp="source ~/.bash_profile" 
+alias bp="vim ~/.bash_profile";
+alias vrc="vim ~/.vimrc";
+alias sbp="source ~/.bash_profile;echo bash_profile sourced" 
 alias h='history'
 alias j='jobs -l'
 alias sap3='source activate pythonv3';
 alias satf='source activate tflow';
 alias sainf='source activate inf3331';
 alias sd='source deactivate';
-alias irc='mvim ~/.inputrc';
-alias testpy='mvim ~/Documents/Testscripts/test.py';
+alias irc='vim ~/.inputrc';
+alias testpy='vim ~/Documents/Testscripts/test.py';
 alias runtest='python ~/Documents/Testscripts/test.py';
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -37,6 +38,8 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 alias ls='gls --color --group-directories-first'  
 alias c='clear'
+# alias tmux="TERM=screen-256color-bce tmux"
+alias tmux='tmux -2'
 
 
  # ____   _  _____ _   _ 
@@ -45,11 +48,17 @@ alias c='clear'
 # |  __/ ___ \| | |  _  |
 # |_| /_/   \_\_| |_| |_|
 export PATH="/usr/local/bin:$PATH";
+# export PATH="~/bin/:$PATH";
+export PATH="~/Documents/Scripts/bashscripts:$PATH";
 export PATH="/Applications/NEURON-7.5/nrn/x86_64/bin:$PATH" #added by NEURON installer
 export PATH=$PATH:/Applications/Ovito.app/Contents/MacOS/
 # added by Anaconda2 4.3.0 installer
 export PATH="/Users/Tuv/anaconda/bin:$PATH"
 export PATH="/opt/bin:$PATH"
+# Setting PATH for Python 3.7
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
 
 #  ______   _______ _   _  ___  _   _ ____   _  _____ _   _ 
 # |  _ \ \ / /_   _| | | |/ _ \| \ | |  _ \ / \|_   _| | | |
@@ -80,24 +89,20 @@ export LS_COLORS
 # |  _|| |_| | | | | (__| |_| | (_) | | | \__ \
 # |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
                                              
-function rename {
-for i in $( command -p ls );
-do
-        mv $i ${i#INF3331-}
-done
-}
+# function rename {
+# for i in $( command -p ls );
+# do
+#         mv $i ${i#INF3331-}
+# done
+# }
 
-function grade { 
-    str=($*)
-    filename=$(basename ${PWD}${1}.txt)
-    touch $filename
-    echo $(date) >> $filename
-    echo ${str[@]:1} >> $filename
-}
+# function grade { 
+#     str=($*)
+#     filename=$(basename ${PWD}${1}.txt)
+#     touch $filename
+#     echo $(date) >> $filename
+#     echo ${str[@]:1} >> $filename
+# }
 
 
-
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
+# source rename.sh
