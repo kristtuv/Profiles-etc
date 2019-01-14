@@ -7,8 +7,10 @@ let localmapleader = ","
 " Keep Plugin commands between vundle#begin/end.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'ZoomWin'
 Plugin 'vundlevim/vundle.vim'
 Plugin 'vim-latex/vim-latex'
+" Plugin 'conornewton/vim-latex-preview'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
@@ -27,6 +29,8 @@ Plugin 'kana/vim-textobj-line'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 Plugin 'valloric/youcompleteme'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'machakann/vim-swap'
 "Colortheme plugins
 Plugin 'xolox/vim-misc'
 Plugin 'junegunn/seoul256.vim'
@@ -35,8 +39,6 @@ Plugin 'morhetz/gruvbox'
 Plugin 'lokaltog/vim-distinguished'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'machakann/vim-swap'
-Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -47,7 +49,6 @@ filetype plugin indent on    " required
 noremap <C-o> :NERDTreeToggle<CR>
 noremap <F2> :echo 'Current time is ' . strftime('%c')<CR>
 noremap <F3> :noh<CR>
-
 "Insert mode mappings
 inoremap <C-l> <Right>
 inoremap <C-k> <Up>
@@ -56,15 +57,14 @@ inoremap <C-h> <Left>
 inoremap jj <Esc>
 " inoremap øø <Esc>
 inoremap <C-f> <C-r>"
-
 inoremap ´ `
 "normal mode mappings
 nnoremap <d-k> 10k
 nnoremap <d-j> 10j
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-h> <C-W>h
-nnoremap <C-l> <C-W>l
+" nnoremap <C-j> <C-W>j
+" nnoremap <C-k> <C-W>k
+" nnoremap <C-h> <C-W>h
+" nnoremap <C-l> <C-W>l
 nnoremap ø ;
 nnoremap Ø ,
 nnoremap Y y$
@@ -84,7 +84,6 @@ nnoremap <leader>pdf :!open '%:r'.pdf<cr>
 nnoremap <leader>doc :call Pydoc()<cr>
 nnoremap <leader>p :Shell pydoc 
 nnoremap <leader>e oexit()<esc>
-" nnoremap <leader>xxx :! 
 "User Commands
 " command! Mnote vsplit | Note masternote
 
@@ -125,6 +124,8 @@ match OverLength /\%81v.\+/
 let g:indent_guides_enable_on_vim_startup = 1
 let g:notes_directories = ['/Users/Tuv/.vim/bundle/vim-notes/misc/notes/user', 
                            \'~/Documents/master_thesis/dear_diary/'] 
+" let g:Tex_Compilerule_pdf 
+let g:tex_flavor='latex'
 """"""""""""""""
 "Fucking with linenumbers"
 :set number relativenumber
@@ -136,6 +137,7 @@ let g:notes_directories = ['/Users/Tuv/.vim/bundle/vim-notes/misc/notes/user',
 " highlight SignColumn guibg=red
 " sign define name text=>>
 " sign define information text=!> linehl=Warning texthl=Error icon=/path/to/information.xpm
+
 
  " ____            _            
 " |  _ \ _   _  __| | ___   ___ 

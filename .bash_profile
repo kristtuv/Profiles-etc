@@ -40,6 +40,7 @@ alias ls='gls --color --group-directories-first'
 alias c='clear'
 # alias tmux="TERM=screen-256color-bce tmux"
 alias tmux='tmux -2'
+alias texvim='vim ~/.vim/bundle/vim-latex/ftplugin/tex.vim';
 
 
  # ____   _  _____ _   _ 
@@ -55,6 +56,8 @@ export PATH=$PATH:/Applications/Ovito.app/Contents/MacOS/
 # added by Anaconda2 4.3.0 installer
 export PATH="/Users/Tuv/anaconda/bin:$PATH"
 export PATH="/opt/bin:$PATH"
+export PATH="/opt/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 # Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
