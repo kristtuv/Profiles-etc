@@ -84,6 +84,9 @@ nnoremap <leader>pdf :!open '%:r'.pdf<cr>
 nnoremap <leader>doc :call Pydoc()<cr>
 nnoremap <leader>p :Shell pydoc 
 nnoremap <leader>e oexit()<esc>
+nnoremap <leader>main :!pdflatex main.tex<cr>
+nnoremap <leader>omain :!open main.pdf<cr>
+
 "User Commands
 " command! Mnote vsplit | Note masternote
 
@@ -118,8 +121,8 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/                                                  
+highlight OverLength ctermbg=195 ctermfg=white guibg=#592929
+match OverLength /\%81v/                                                  
 "lets
 let g:indent_guides_enable_on_vim_startup = 1
 let g:notes_directories = ['/Users/Tuv/.vim/bundle/vim-notes/misc/notes/user', 

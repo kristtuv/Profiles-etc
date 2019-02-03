@@ -41,7 +41,9 @@ alias c='clear'
 # alias tmux="TERM=screen-256color-bce tmux"
 alias tmux='tmux -2'
 alias texvim='vim ~/.vim/bundle/vim-latex/ftplugin/tex.vim';
-
+alias mltx='cd ~/Documents/master_thesis/latex';
+alias runmain='pdflatex ~/Documents/master_thesis/latex/main.tex';
+alias openmain='open ~/Documents/master_thesis/latex/main.pdf';
 
  # ____   _  _____ _   _ 
 # |  _ \ / \|_   _| | | |
@@ -107,5 +109,18 @@ export LS_COLORS
 #     echo ${str[@]:1} >> $filename
 # }
 
+function cleanVIM()
+{
 
+  echo "Cleaning ~/.vimbackup/"
+  rm -Rf ~/.vimbackup/*
+  echo "Cleaning ~/.vimswap/"
+  rm -Rf ~/.vimswap/*
+  echo "Cleaning ~/.vimviews/"
+  rm -Rf ~/.vimviews/*
+  echo "Cleaning ~/.vimundo/"
+  rm -Rf ~/.vimundo/*
+  echo "All done!"
+
+}
 # source rename.sh
