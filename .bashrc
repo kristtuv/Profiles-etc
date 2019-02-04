@@ -17,9 +17,9 @@ alias fys4460="cd ~/Documents/UiO/V18/FYS4460";
 alias inf5860="cd ~/Documents/UiO/V18/INF5860";
 alias fys4130="cd ~/Documents/UiO/V18/FYS4130";
 alias v18="cd ~/Documents/UiO/V18/";
-alias bp="vim ~/.bash_profile";
+alias bp="vim ~/.bashrc";
 alias vrc="vim ~/.vimrc";
-alias sbp="source ~/.bash_profile;echo bash_profile sourced" 
+alias sbp="source ~/.bashrc;echo bashrc sourced" 
 alias h='history'
 alias j='jobs -l'
 alias sap3='source activate pythonv3';
@@ -36,7 +36,7 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
-alias ls='gls --color --group-directories-first'  
+alias ls='ls --color --group-directories-first'  
 alias c='clear'
 # alias tmux="TERM=screen-256color-bce tmux"
 alias tmux='tmux -2'
@@ -61,7 +61,7 @@ export PATH="/opt/bin:$PATH"
 export PATH="/opt/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 # Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
+# The original version is saved in .bashrc.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH=".:$PATH"
 
