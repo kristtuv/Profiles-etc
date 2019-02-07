@@ -4,5 +4,5 @@ cp .bash_profile .bashrc;
 sed -i "s/bash_profile/bashrc/g" .bashrc;
 sed -i "s/gls/ls/g" .bashrc; 
 cp .bashrc ~/.;
-
+cp .tmux.conf ~/.;
 source ~/.bashrc

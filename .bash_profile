@@ -45,7 +45,7 @@ alias texvim='vim ~/.vim/bundle/vim-latex/ftplugin/tex.vim';
 alias mltx='cd ~/Documents/master_thesis/latex';
 alias runmain='pdflatex ~/Documents/master_thesis/latex/main.tex';
 alias openmain='open ~/Documents/master_thesis/latex/main.pdf';
-
+alias tc='vim ~/.tmux.conf';
  # ____   _  _____ _   _ 
 # |  _ \ / \|_   _| | | |
 # | |_) / _ \ | | | |_| |
@@ -65,6 +65,8 @@ export PATH="$HOME/bin:$PATH"
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH=".:$PATH"
+# export PATH="/usr/local/bin/bin:$PATH";
+export PATH="/Users/Tuv/Documents/Modules/lammps-12Dec18/build:$PATH";
 
 #  ______   _______ _   _  ___  _   _ ____   _  _____ _   _ 
 # |  _ \ \ / /_   _| | | |/ _ \| \ | |  _ \ / \|_   _| | | |
