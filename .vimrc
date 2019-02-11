@@ -121,7 +121,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-highlight OverLength ctermbg=195 ctermfg=white guibg=#592929
+highlight OverLength ctermbg=white ctermfg=black guibg=#592929
 match OverLength /\%81v/                                                  
 "lets
 let g:indent_guides_enable_on_vim_startup = 1

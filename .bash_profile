@@ -46,6 +46,7 @@ alias mltx='cd ~/Documents/master_thesis/latex';
 alias runmain='pdflatex ~/Documents/master_thesis/latex/main.tex';
 alias openmain='open ~/Documents/master_thesis/latex/main.pdf';
 alias tc='vim ~/.tmux.conf';
+alias thesis='cd ~/Documents/master_thesis'
  # ____   _  _____ _   _ 
 # |  _ \ / \|_   _| | | |
 # | |_) / _ \ | | | |_| |
