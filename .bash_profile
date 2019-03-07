@@ -46,7 +46,8 @@ alias mltx='cd ~/Documents/master_thesis/latex';
 alias runmain='pdflatex ~/Documents/master_thesis/latex/main.tex';
 alias openmain='open ~/Documents/master_thesis/latex/main.pdf';
 alias tc='vim ~/.tmux.conf';
-alias thesis='cd ~/Documents/master_thesis'
+alias thesis='cd ~/Documents/master_thesis';
+alias sa='source activate';
  # ____   _  _____ _   _ 
 # |  _ \ / \|_   _| | | |
 # | |_) / _ \ | | | |_| |
@@ -69,6 +70,8 @@ export PATH=".:$PATH"
 # export PATH="/usr/local/bin/bin:$PATH";
 export PATH="/Users/Tuv/Documents/Modules/lammps-12Dec18/build:$PATH";
 
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;35;40'
 #  ______   _______ _   _  ___  _   _ ____   _  _____ _   _ 
 # |  _ \ \ / /_   _| | | |/ _ \| \ | |  _ \ / \|_   _| | | |
 # | |_) \ V /  | | | |_| | | | |  \| | |_) / _ \ | | | |_| |
@@ -84,7 +87,9 @@ export PYTHONPATH="${PYTHONPATH}:/Users/Tuv/Documents/Modules/"
 # | |__| |_| | |__| |_| |  _ < ___) |
  # \____\___/|_____\___/|_| \_\____/ 
                                    
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31;1m\]\w\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[31;1m\]\W\[\033[m\]\$ "
+# PS1='[\u@\h:$(p=${PWD/#"$HOME"/~};((${#p}>30))&&echo "${p::10}…${p:(-19)}"||echo "\w")]\$ '
+# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[m\]\$ "
 export CLICOLOR=1
 LS_COLORS='di=1;34:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=1;36:*.rpm=90:*.tar=1;31:*.py=4'  
 export LS_COLORS 

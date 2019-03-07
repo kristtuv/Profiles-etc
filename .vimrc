@@ -58,6 +58,8 @@ inoremap jj <Esc>
 " inoremap øø <Esc>
 inoremap <C-f> <C-r>"
 inoremap ´ `
+inoremap <C-ø> <f7> 
+
 "normal mode mappings
 nnoremap <d-k> 10k
 nnoremap <d-j> 10j
@@ -100,6 +102,7 @@ let g:python_highlight_all = 1
 syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " sets
+set macmeta
 set background=dark 
 set t_Co=256
 set autoindent
