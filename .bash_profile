@@ -23,6 +23,7 @@ alias sbp="source ~/.bash_profile;echo bash_profile sourced"
 alias h='history'
 alias j='jobs -l'
 alias sap3='source activate py3';
+alias sa='source activate';
 alias sap2='source activate py2';
 alias satf='source activate tflow';
 alias sainf='source activate inf3331';
@@ -48,6 +49,7 @@ alias openmain='open ~/Documents/master_thesis/latex/main.pdf';
 alias tc='vim ~/.tmux.conf';
 alias thesis='cd ~/Documents/master_thesis';
 alias sa='source activate';
+alias imap='vim ~/.vim/bundle/vim-latex/ftplugin/tex.vim';
  # ____   _  _____ _   _ 
 # |  _ \ / \|_   _| | | |
 # | |_) / _ \ | | | |_| |

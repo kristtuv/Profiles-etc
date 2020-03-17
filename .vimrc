@@ -1,204 +1,131 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""Vundle"""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-let mapleader = ","
-let localmapleader = ","
 " Keep Plugin commands between vundle#begin/end.
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'ZoomWin'
-Plugin 'vundlevim/vundle.vim'
-Plugin 'vim-latex/vim-latex'
+Plugin 'vundlevim/vundle.vim' "Vundle
+Plugin 'SirVer/ultisnips' "Make snippets
+Plugin 'vim-latex/vim-latex' "Latex
+Plugin 'scrooloose/nerdtree' "Nerdtree ctrl-o
+Plugin 'scrooloose/syntastic' "Syntax check
+Plugin 'yggdroot/indentline' "Indentlines small
+Plugin 'tpope/vim-commentary' "Comment stuff gccc
+Plugin 'tpope/vim-surround' "Surround things yssb
+Plugin 'tpope/vim-repeat' "Repat plugin commands. Note: can be expanded
+Plugin 'godlygeek/tabular' "Align chracters ex: :Tab /=
+Plugin 'itchyny/lightline.vim' "Add lightline
+Plugin 'wellle/tmux-complete.vim' "Autocomplete words shown in tmux window
+Plugin 'ctrlpvim/ctrlp.vim' "Fuzzyfinder
+Plugin 'machakann/vim-swap' "Swap arguments
+Plugin 'flazz/vim-colorschemes' "All colorschemes (pretty much)
+Plugin 'Valloric/YouCompleteMe' "Completion
+" Plugin 'kana/vim-textobj-user' "Creating selection patterns
+" Plugin 'kana/vim-textobj-entire' "Creating selection patterns
+" Plugin 'kana/vim-textobj-indent' "Creating selection patterns
+" Plugin 'kana/vim-textobj-syntax' "Creating selection patterns
+" Plugin 'kana/vim-textobj-line' "Creating selection patterns
+" Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'honza/vim-snippets'
+" Plugin 'hdima/python-syntax'
+" Plugin 'ZoomWin'
 " Plugin 'conornewton/vim-latex-preview'
-Plugin 'scrooloose/nerdtree'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'godlygeek/tabular'
-Plugin 'thinca/vim-quickrun'
-Plugin 'itchyny/lightline.vim'
-Plugin 'kana/vim-textobj-user'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-syntax'
-Plugin 'kana/vim-textobj-line'
-Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
-Plugin 'valloric/youcompleteme'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'machakann/vim-swap'
-"Colortheme plugins
-Plugin 'xolox/vim-misc'
-Plugin 'junegunn/seoul256.vim'
-Plugin 'hdima/python-syntax'
-Plugin 'morhetz/gruvbox'
-Plugin 'lokaltog/vim-distinguished'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'majutsushi/tagbar'
 " Plugin 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
-" filetype plugin on
-" filetype indent on
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"All modes mapping
+
+"""""""""""""""""""All Modes Mapping"""""""""""""""""""""
 noremap <C-o> :NERDTreeToggle<CR>
-noremap <F2> :echo 'Current time is ' . strftime('%c')<CR>
-noremap <F3> :noh<CR>
-"Insert mode mappings
-inoremap <C-l> <Right>
+
+"""""""""""""""""""Insert mode mappings""""""""""""""""""
+inoremap <C-l> <Right> 
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-h> <Left>
-inoremap jj <Esc>
-" inoremap øø <Esc>
 inoremap <C-f> <C-r>"
-inoremap ´ `
-inoremap <C-ø> <f7> 
 
-"normal mode mappings
-nnoremap <d-k> 10k
-nnoremap <d-j> 10j
-" nnoremap <C-j> <C-W>j
-" nnoremap <C-k> <C-W>k
-" nnoremap <C-h> <C-W>h
-" nnoremap <C-l> <C-W>l
-nnoremap ø ;
-nnoremap Ø ,
+""""""""""""""""Normal Mode Mappings"""""""""""""""""""""
 nnoremap Y y$
-nnoremap <space> :
 
-"Leader mappings
-nnoremap <leader>gc :Gcommit %<CR>
-nnoremap <leader>gp :Gpush<CR>
-nnoremap <Leader>t :TagbarToggle<CR>
+""""""""""""""""""""Leader Mappings"""""""""""""""""""""
 nnoremap <leader>vrc :vsplit $MYVIMRC<cr>
 nnoremap <leader>svrc :source $MYVIMRC<cr>
-nnoremap <leader>test :vsplit ~/Documents/Testscripts/test.py<cr>
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 nnoremap <leader>D "_d$
-nnoremap <leader>pdf :!open '%:r'.pdf<cr> 
-nnoremap <leader>doc :call Pydoc()<cr>
-nnoremap <leader>p :Shell pydoc 
-nnoremap <leader>e oexit()<esc>
-nnoremap <leader>main :!pdflatex main.tex<cr>
-nnoremap <leader>omain :!open main.pdf<cr>
-
-"User Commands
-" command! Mnote vsplit | Note masternote
+nnoremap <leader>n :lnext<cr>
+nnoremap <leader>p :lprevious<cr>
 
 
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_imporoved_strings = 1
-let g:python_highlight_space_errors = 0
-let g:python_highlight_builtin_objs = 0
-let g:python_highlight_all = 1
+""""""""""""""""""""""Colorscheme"""""""""""""""""""""""
+""Gruvbox
+" colorscheme gruvbox
+" let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_imporoved_strings = 1
+
+""Afterglow
+colorscheme afterglow
+
+" let g:python_highlight_space_errors = 0
+" let g:python_highlight_builtin_objs = 0
+" let g:python_highlight_all = 1
 syntax on
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" sets
-set macmeta
-set background=dark 
-set t_Co=256
-set autoindent
-set tabstop=4
-set number
-set shiftwidth=4
-set expandtab
-set wildmode=longest,list,full
-set path+=**
-set wildmenu
-set laststatus=2
-set noshowmode
-set guifont=monaco:h14
-set incsearch
-set hlsearch
+
+""""""""""""""""""""""""Sets"""""""""""""""""""""""""""""
+set mouse=a "Allow clicking with mouse
+set background=dark "Sets default background, might change with colorscheme
+set t_Co=256 "Enable 256 colors
+set cindent autoindent "Autoindent for newline
+set tabstop=4 "Maximum tab size
+set shiftwidth=4 "Size of indent in spaces
+set expandtab "Insert spaces when tab is used
+set wildmode=longest,list,full "Tabcompletion command line
+set wildmenu "Tabcompletion command line
+set path+=** "When using :find, also search subdirs
+set laststatus=2 "Always show status line
+set noshowmode "Dont show insert text. Removed because of lightline
+set incsearch "Partial search
+set hlsearch "Highlight all matches
+
 " set folding
 set foldmethod=manual   
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
+""""""""""""""Syntactic"""""""""""""""""""""""""""""""""
+" let g:syntastic_aggregate_errors = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+""""""""""""""""""""Snippets"""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<c-h>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+""""""""""""""""""""Latex"""""""""""""""""""""""""""""""
+let g:tex_flavor='latex'
+let g:Tex_AdvancedMath = 1
+
+""""""""""""""""Mark 80 character limit""""""""""""""""""
 highlight OverLength ctermbg=white ctermfg=black guibg=#592929
 match OverLength /\%81v/                                                  
-"lets
-let g:indent_guides_enable_on_vim_startup = 1
-let g:notes_directories = ['/Users/Tuv/.vim/bundle/vim-notes/misc/notes/user', 
-                           \'~/Documents/master_thesis/dear_diary/'] 
-" let g:Tex_Compilerule_pdf 
-let g:tex_flavor='latex'
-""""""""""""""""
-"Fucking with linenumbers"
+
+"""""""""""""""""""""""Linenumbers"""""""""""""""""""""""
+" set number "Show numbers
 :set number relativenumber
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
-" highlight SignColumn guibg=red
-" sign define name text=>>
-" sign define information text=!> linehl=Warning texthl=Error icon=/path/to/information.xpm
 
-
- " ____            _            
-" |  _ \ _   _  __| | ___   ___ 
-" | |_) | | | |/ _` |/ _ \ / __|
-" |  __/| |_| | (_| | (_) | (__ 
-" |_|    \__, |\__,_|\___/ \___|
- "       |___/                  
-" function! Pydoc()
-"     let save_isk = &iskeyword
-  
-"     try
-"         set iskeyword+=.
-"         let words = split(expand("<cword>"), '\.')
-"         let w = words[0]
-"         let t=[] | silent execute '%s/import \(\w\+\) as '
-"                 \.w.'\zs/\=add(t,submatch(1))[1:0]/&n'
-"         let words[0] = t[0]
-"         execute ':new |'.
-"                     \':setlocal buftype=nofile |'.
-"                     \':setlocal bufhidden=hide |'.
-"                     \ ':setlocal noswapfile |'.
-"                     \"r!pydoc " . join(words, '.')
-"         let &iskeyword = save_isk
-
-"     catch 'E486'
-"         execute ':new |'.
-"                     \':setlocal buftype=nofile |'.
-"                     \':setlocal bufhidden=hide |'.
-"                     \ ':setlocal noswapfile |'.
-"                     \"r!pydoc " . expand("<cword>")
-"     endtry
-    
-"     set iskeyword-=.
-" endfunction
-
-
-
-
-
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
-function! s:RunShellCommand(cmdline)
-  echo a:cmdline
-  let expanded_cmdline = a:cmdline
-  for part in split(a:cmdline, ' ')
-     if part[0] =~ '\v[%#<]'
-        let expanded_part = fnameescape(expand(part))
-        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-     endif
-  endfor
-  botright new
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  call setline(1, 'You entered:    ' . a:cmdline)
-  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-  call setline(3,substitute(getline(2),'.','=','g'))
-  execute '$read !'. expanded_cmdline
-  setlocal nomodifiable
-  1
-endfunction
